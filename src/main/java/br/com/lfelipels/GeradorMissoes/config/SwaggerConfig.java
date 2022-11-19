@@ -17,25 +17,24 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
     @Bean
-    public Docket api(){
+    public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-        .select()
-        .apis(RequestHandlerSelectors.any())
-        .paths(PathSelectors.any())
-        .build()
-        .apiInfo(buildApiInfo());
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(buildApiInfo());
     }
-    
-    private ApiInfo buildApiInfo(){
+
+    private ApiInfo buildApiInfo() {
         return new ApiInfoBuilder()
-        .title("Gerador de missões")
-        .description("Api para gerar missões randômicas")
-        .contact(new Contact(
-            "Luis Felipe", 
-            "https://github.com/lfelipels/mission-generator-api",
-            null
-            ))
-        .version("1.0.0")
-        .build();
+                .title("Gerador de missões")
+                .description("Api para gerar missões randômicas")
+                .contact(new Contact(
+                        "Luis Felipe",
+                        "https://github.com/lfelipels/mission-generator-api",
+                        null))
+                .version("1.0.0")
+                .build();
     }
 }
